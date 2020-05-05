@@ -2,7 +2,7 @@ FROM node:12.16.2-alpine
 
 # Build arguments to change source url, branch or tag
 ARG CODIMD_REPOSITORY=https://github.com/4lab/codimd-server.git
-ARG VERSION=master
+ARG VERSION=stable
 #static
 ARG UID=1015
 
