@@ -92,7 +92,6 @@ RUN apk add --no-cache --virtual .dep \
     apk del .dep && \
     \
     adduser -u $UID -h /codimd/ -D -S codimd && \
-    chmod o+rx,g+rx /codimd/public/uploads && \
     chown -R codimd /codimd/
 
 WORKDIR /codimd
