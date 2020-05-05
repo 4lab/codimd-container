@@ -50,29 +50,29 @@ $GOSU ./node_modules/.bin/sequelize db:migrate
     ";
 } ; }
 
-# Change owner and permission if filesystem backend is used and user has root permissions
-if [ "$UID" -eq 0 ] && [ "$CMD_IMAGE_UPLOAD_TYPE" = "filesystem" ]; then
-    if [ "$UID" -eq 0 ]; then
 # Disable this for now to avoid permission fuckup
+# Change owner and permission if filesystem backend is used and user has root permissions
+#if [ "$UID" -eq 0 ] && [ "$CMD_IMAGE_UPLOAD_TYPE" = "filesystem" ]; then
+#    if [ "$UID" -eq 0 ]; then
 #        chown -R codimd ./public/uploads
 #        chmod 700 ./public/uploads
-    else
-        echo "
-            #################################################################
-            ###                                                           ###
-            ###                        !!!WARNING!!!                      ###
-            ###                                                           ###
-            ###        Container was started without root permissions     ###
-            ###           and filesystem storage is being used.           ###
-            ###        In case of filesystem errors these need to be      ###
-            ###                      changed manually                     ###
-            ###                                                           ###
-            ###                       !!!WARNING!!!                       ###
-            ###                                                           ###
-            #################################################################
-        ";
-    fi
-fi
+#    else
+#        echo "
+#            #################################################################
+#            ###                                                           ###
+#            ###                        !!!WARNING!!!                      ###
+#            ###                                                           ###
+#            ###        Container was started without root permissions     ###
+#            ###           and filesystem storage is being used.           ###
+#            ###        In case of filesystem errors these need to be      ###
+#            ###                      changed manually                     ###
+#            ###                                                           ###
+#            ###                       !!!WARNING!!!                       ###
+#            ###                                                           ###
+#            #################################################################
+#        ";
+#    fi
+#fi
 
 # Sleep to make sure everything is fine...
 sleep 3
