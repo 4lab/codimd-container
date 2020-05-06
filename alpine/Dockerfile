@@ -92,7 +92,8 @@ RUN apk add --no-cache --virtual .dep \
     apk del .dep && \
     \
     adduser -u $UID -h /codimd/ -D -S codimd && \
-    chown -R codimd /codimd/
+    chown -R codimd /codimd/ && \
+    mkdir /codimd/run
 
 WORKDIR /codimd
 EXPOSE 3000
